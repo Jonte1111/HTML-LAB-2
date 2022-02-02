@@ -50,10 +50,7 @@ body {
       text-align: center;
       font-weight:900;
   }
-li {
-    float:left; /*Gör att list items hamnar horisontellt*/
-    margin-left: 2%; /*Centrerar*/
-}
+
 @keyframes spinning { /*En kul animation för loggan vi tog från code-boxx.com*/
     from { transform: rotate(0deg) }
     to { transform: rotate(360deg) }
@@ -79,14 +76,7 @@ header {
     width:20%;
     text-align: center;
 }
-.meny {
-    font-family: Verdana, Geneva, Tahoma, sans-serif; /*Gör menyn lite snyggar + centrerar*/
-    width: 20%;
-    height: auto;
-    max-width: 100%;
-    list-style-type: none;
-    padding-left: 45.5%;
-}
+
 .reklam { /*En div med en reklambild*/
     width: 20%; 
     height: 100%; 
@@ -105,8 +95,56 @@ header {
     text-decoration: none; /*Tar bort understrykningen på länkarna i menyn*/
 }
 .meny_knapp:visited {/*Om man använt länken blir den blå*/
-    color: blue;
+    color: black;
 }
-.meny_knapp:hover { /*Om man har muspekaren över en länk blir den röd*/
-    color: red;
+
+
+ul.meny { /*Centrerar menyn och stylar den, "display:flex" gör att listan blir horisontell*/
+list-style-type: none; 
+    padding-left: 40%;
+    margin-top: 0;
+    margin-bottom: 0;
+    
+    font-weight: bold;
+    font-size: 20px;
+    display: flex;
+}
+ul.meny>li { /*Behövs för att kunna visa upp undermenyn*/
+    position: relative;
+}
+
+
+ul.meny>li>a { /*Gör länkarna till block och ställer in mellanrummet mellan dem samt deras storlek*/
+    display: block;
+    padding: 1rem;
+    text-decoration: none;
+    color:black;
+
+}
+ul.meny>li:hover>a { /*byter färg när en menyknapp "hovras"*/
+    background-color: rgb(228, 226, 226);
+}
+ul.produkter { /*Gömmer undermenyn till produkter samt sätter den precis i underkant med produkt-knappen, ställer också in bredd/färg osv*/
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    background-color: rgb(228, 226, 226);
+    font-size: 20px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    display: none;
+}
+ul.produkter>li>a { /*Styling på meny-texten/länkarna*/
+    text-decoration: none;
+    color: black;
+    padding-left: 15%;
+}
+ul.produkter>li:hover { /*Undermenyn till produkter byter färg vid hover*/ 
+    background-color: lightgray;
+}
+ul.meny>li:hover>ul { /*visar undermeny vid hover på "Produkter"*/
+    display: block;
 }
