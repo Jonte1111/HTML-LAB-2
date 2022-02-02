@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<title>
+    Formulär
+</title>
+<h1>
+    Beställning av fordon
+</h1>
+    <form>
+        <div>
+            <label for="name">Namn:</label><br>
+            <input type="text" id="name" required>
+        </div>
+        <div>
+            <label for="email">Din epost</label><br>
+            <input type="email" required id="email">
+          </div>
+          <div>
+            <label for="bil">Vilken bil önskas att beställa?</label><br>
+            <input type="text" required id="bil">
+          </div>
+          <div>
+            <label for="color">Justering av färg på bilen:</label><br>
+            <!--
+              En dropdown-meny skapar vi med <select>. Valen skapar vi med <option>
+            -->
+            <select id="color">     <!--Dropdownmeny med options-->
+              <option>Standard</option>
+              <option>Röd</option>
+              <option>Blå</option>
+              <option>Grön</option>
+              <option>Beige</option>
+            </select>
+          </div>
+          <!--<div> Varför ska detta vara med för?
+            <label for="amount">Antal:</label><br>
+            <input type="number" id="amount" min="1" max="10" step="2" value="2">
+          </div>-->
+          <fieldset>
+            <legend>Frakt</legend>
+            <label>Välj frakt:<br>
+              <input type="radio" name="shipping"> Möt oss vid Slottsbron, Grums<br>  <!--Två radiobutttons-->
+              <input type="radio" name="shipping"> Vi kör bilen till dig!<br>
+    
+            </label>
+          </fieldset>
+          <div>
+            <label for="comments">Orderkommentar</label><br> <!--Textarea-->
+            <textarea rows="15" id="comments"></textarea>
+          </div>
+          <div>
+            <input type="checkbox" id="kundvillkor" required>   <!--Checkbox1-->
+            <label for="kundvillkor">Godkänn kundvillkor</label>
+          </div>
+          <div>
+            <input type="checkbox" id="forsiktigt">             <!--Checkbox2-->
+            <label for="forsiktigt">Kör försiktigt!</label>
+          </div>
+          <div>
+            <button type="submit">Skicka</button>
+            <button type="reset">Rensa</button>
+          </div>
+    </form>
+
+    <!-- Behöver en textfält(minst 1),, 
+        , en textarea-->
